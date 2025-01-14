@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/Main.qml</file>
+        <file>qml/ChatArea.qml</file>
+        <file>qml/ChatList.qml</file>
+        <file>qml/ChatItem.qml</file>
     </qresource>
 </RCC>
