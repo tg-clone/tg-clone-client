@@ -1,0 +1,13 @@
+[requires]
+qt/6.7.3
+
+[options]
+qt:gui=True
+qt:widgets=True
+qt:qtdeclarative=True
+qt:qtshadertools=True
+qt:shared=True
+[generators]
+CMakeDeps
+CMakeToolchain
+
