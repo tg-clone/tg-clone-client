@@ -3,10 +3,9 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Rectangle {
-    id: chatArea
+    width: 400
+    height: 600
     color: "#FFFFFF"
-    border.color: "#D3D3D3"
-    anchors.margins: 10
 
     ColumnLayout {
         anchors.fill: parent
@@ -15,20 +14,17 @@ Rectangle {
             id: messageList
             Layout.fillHeight: true
             Layout.fillWidth: true
-            model: ListModel {
-                ListElement { sender: "Alice"; message: "Hi there!" }
-                ListElement { sender: "Me"; message: "Hello!" }
-                ListElement { sender: "Alice"; message: "How are you?" }
-            }
+            model: chatViewModel
+
             delegate: Row {
                 spacing: 10
                 Text {
-                    text: sender + ":"
+                    text: model.sender + ":"
                     font.pixelSize: 16
                     font.bold: true
                 }
                 Text {
-                    text: message
+                    text: model.text
                     font.pixelSize: 16
                 }
             }
@@ -48,7 +44,7 @@ Rectangle {
                 text: "Send"
                 onClicked: {
                     if (inputField.text !== "") {
-                        messageList.model.append({ sender: "Me", message: inputField.text })
+                        // Здесь можно добавить отправку сообщений
                         inputField.clear()
                     }
                 }
